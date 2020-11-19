@@ -12,7 +12,10 @@ namespace Assignment1
             List<double> resultList = new List<double>();
             bool keepGoing = false;
 
-            Console.WriteLine("Default Title: {0}", Console.Title);
+            //Console.WriteLine("Default Title: {0}", Console.Title);
+            //Byt ut titeln i konsolen till Accounter
+            Console.Title = "Accounter";
+            //Console.WriteLine()
             do
             {
 
@@ -45,14 +48,14 @@ namespace Assignment1
                         break;
 
                     case "/":
-                        sum = term1 * term2 * term3;
+                        sum = term1 / term2  / term3;
                         break;
                 }
 
                 //Skriv ut resultatet och lägga resultatet i en lista
                 Console.WriteLine($"{term1} {userOperator} {term2} {userOperator} {term3} = {sum}");
                 resultList.Add(sum);
-
+                
                 //
                 if (sum < 100)
                 {
