@@ -7,7 +7,7 @@ namespace Assignment1
     {
         static void Main(string[] args)
         {
-            string userOperator;
+            char userOperator1, userOperator2;
             int term1, term2, term3, sum = 0;
             List<int> resultList = new List<int>();
             bool keepGoing = false;
@@ -18,10 +18,13 @@ namespace Assignment1
             
             do
             {
-                //Be användaren att ange en operator
-                Console.WriteLine("Enter operator, choose between +, -, *, /");
-                Console.Write("Enter the operator: ");
-                userOperator = Console.ReadLine();
+                //Be användaren att ange 2 operator
+                Console.WriteLine("Enter 2 operator, choose between +, -, *, /");
+                Console.Write("Enter the first operator: ");
+                userOperator1 = Convert.ToChar(Console.ReadLine());
+                Console.Write("Enter the second operator: ");
+                userOperator2 = Convert.ToChar(Console.ReadLine());
+
                 //Be användaren om ett par termer att använda operatorer på
                 Console.WriteLine("Enter 3 numbers.");
                 Console.Write("Enter the first number: ");
@@ -32,30 +35,87 @@ namespace Assignment1
                 term3 = Convert.ToInt32(Console.ReadLine());
 
                 //Räkna ut resultatet
-                switch (userOperator)
+                if (userOperator1 == '+')
                 {
-                    case "+":
+                    if (userOperator2 == '+')
+                    {
                         sum = term1 + term2 + term3;
-                        break;
-
-                    case "-":
-                        sum = term1 - term2 - term3;
-                        break;
-
-                    case "*":
-                        sum = term1 * term2 * term3;
-                        break;
-
-                    case "/":
-                        sum = term1 / term2  / term3;
-                        break;
+                    }
+                    else if (userOperator2 == '-')
+                    {
+                        sum = term1 + term2 - term3;
+                    }
+                    else if (userOperator2 == '*')
+                    {
+                        sum = term1 + (term2 * term3);
+                    }
+                    else if (userOperator2 == '/')
+                    {
+                        sum = term1 + (term2 / term3);
+                    }
                 }
-
-                //Skriv ut resultatet och lägga resultatet i en lista
-                Console.WriteLine($"{term1} {userOperator} {term2} {userOperator} {term3} = {sum}");
-                resultList.Add(sum);
+                else if (userOperator1 == '-')
+                {
+                    if (userOperator2 == '+')
+                    {
+                        sum = term1 - term2 + term3;
+                    }
+                    else if (userOperator2 == '-')
+                    {
+                        sum = term1 - term2 - term3;
+                    }
+                    else if (userOperator2 == '*')
+                    {
+                        sum = term1 - (term2 * term3);
+                    }
+                    else if (userOperator2 == '/')
+                    {
+                        sum = term1 - (term2 / term3);
+                    }
+                }
+                else if (userOperator1 == '*')
+                {
+                    if (userOperator2 == '+')
+                    {
+                        sum = (term1 * term2) + term3;
+                    }
+                    else if (userOperator2 == '-')
+                    {
+                        sum = (term1 * term2) - term3;
+                    }
+                    else if (userOperator2 == '*')
+                    {
+                        sum = term1 * term2 * term3;
+                    }
+                    else if (userOperator2 == '/')
+                    {
+                        sum = term1 * term2 / term3;
+                    }
+                }
+                else if (userOperator1 == '/')
+                {
+                    if (userOperator2 == '+')
+                    {
+                        sum = (term1 / term2) + term3;
+                    }
+                    else if (userOperator2 == '-')
+                    {
+                        sum = (term1 / term2) - term3;
+                    }
+                    else if (userOperator2 == '*')
+                    {
+                        sum = term1 / term2 * term3;
+                    }
+                    else if (userOperator2 == '/')
+                    {
+                        sum = term1 / term2 / term3;
+                    }
+                }
                 
-                //
+                //Skriv ut resultatet och lägga resultatet i en lista
+                Console.WriteLine($"{term1} {userOperator1} {term2} {userOperator2} {term3} = {sum}");
+                resultList.Add(sum);
+                //Kolla om resultat är större än, mindre än eller lika med 100
                 if (sum < 100)
                 {
                     Console.WriteLine("Less then a hundred");
