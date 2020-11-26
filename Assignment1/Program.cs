@@ -34,84 +34,163 @@ namespace Assignment1
                 Console.Write("Enter the third number: ");
                 term3 = Convert.ToInt32(Console.ReadLine());
 
+
                 //Räkna ut resultatet
-                if (userOperator1 == '+')
+                switch (userOperator1)
                 {
-                    if (userOperator2 == '+')
-                    {
-                        sum = term1 + term2 + term3;
-                    }
-                    else if (userOperator2 == '-')
-                    {
-                        sum = term1 + term2 - term3;
-                    }
-                    else if (userOperator2 == '*')
-                    {
-                        sum = term1 + (term2 * term3);
-                    }
-                    else if (userOperator2 == '/')
-                    {
-                        sum = term1 + (term2 / term3);
-                    }
+                    case '+':
+                        if (userOperator2 == '+')
+                        {
+                            sum = term1 + term2 + term3;
+                        }
+                        else if (userOperator2 == '-')
+                        {
+                            sum = term1 + term2 - term3;
+                        }
+                        else if (userOperator2 == '*')
+                        {
+                            sum = term1 + (term2 * term3);
+                        }
+                        else if (userOperator2 == '/')
+                        {
+                            sum = term1 + (term2 / term3);
+                        }
+                        break;
+
+                    case '-':
+                        if (userOperator2 == '+')
+                        {
+                            sum = term1 - term2 + term3;
+                        }
+                        else if (userOperator2 == '-')
+                        {
+                            sum = term1 - term2 - term3;
+                        }
+                        else if (userOperator2 == '*')
+                        {
+                            sum = term1 - (term2 * term3);
+                        }
+                        else if (userOperator2 == '/')
+                        {
+                            sum = term1 - (term2 / term3);
+                        }
+                        break;
+
+                    case '*':
+                        if (userOperator2 == '+')
+                        {
+                            sum = (term1 * term2) + term3;
+                        }
+                        else if (userOperator2 == '-')
+                        {
+                            sum = (term1 * term2) - term3;
+                        }
+                        else if (userOperator2 == '*')
+                        {
+                            sum = term1 * term2 * term3;
+                        }
+                        else if (userOperator2 == '/')
+                        {
+                            sum = (term1 * term2) / term3;
+                        }
+                        break;
+
+                    case '/':
+                        if (userOperator2 == '+')
+                        {
+                            sum = (term1 / term2) + term3;
+                        }
+                        else if (userOperator2 == '-')
+                        {
+                            sum = (term1 / term2) - term3;
+                        }
+                        else if (userOperator2 == '*')
+                        {
+                            sum = (term1 / term2) * term3;
+                        }
+                        else if (userOperator2 == '/')
+                        {
+                            sum = (term1 / term2) / term3;
+                        }
+                        break;
                 }
-                else if (userOperator1 == '-')
-                {
-                    if (userOperator2 == '+')
-                    {
-                        sum = term1 - term2 + term3;
-                    }
-                    else if (userOperator2 == '-')
-                    {
-                        sum = term1 - term2 - term3;
-                    }
-                    else if (userOperator2 == '*')
-                    {
-                        sum = term1 - (term2 * term3);
-                    }
-                    else if (userOperator2 == '/')
-                    {
-                        sum = term1 - (term2 / term3);
-                    }
-                }
-                else if (userOperator1 == '*')
-                {
-                    if (userOperator2 == '+')
-                    {
-                        sum = (term1 * term2) + term3;
-                    }
-                    else if (userOperator2 == '-')
-                    {
-                        sum = (term1 * term2) - term3;
-                    }
-                    else if (userOperator2 == '*')
-                    {
-                        sum = term1 * term2 * term3;
-                    }
-                    else if (userOperator2 == '/')
-                    {
-                        sum = term1 * term2 / term3;
-                    }
-                }
-                else if (userOperator1 == '/')
-                {
-                    if (userOperator2 == '+')
-                    {
-                        sum = (term1 / term2) + term3;
-                    }
-                    else if (userOperator2 == '-')
-                    {
-                        sum = (term1 / term2) - term3;
-                    }
-                    else if (userOperator2 == '*')
-                    {
-                        sum = term1 / term2 * term3;
-                    }
-                    else if (userOperator2 == '/')
-                    {
-                        sum = term1 / term2 / term3;
-                    }
-                }
-                
+                //if (userOperator1 == '+')
+                //{
+                //    if (userOperator2 == '+')
+                //    {
+                //        sum = term1 + term2 + term3;
+                //    }
+                //    else if (userOperator2 == '-')
+                //    {
+                //        sum = term1 + term2 - term3;
+                //    }
+                //    else if (userOperator2 == '*')
+                //    {
+                //        sum = term1 + (term2 * term3);
+                //    }
+                //    else if (userOperator2 == '/')
+                //    {
+                //        sum = term1 + (term2 / term3);
+                //    }
+                //}
+                //else if (userOperator1 == '-')
+                //{
+                //    if (userOperator2 == '+')
+                //    {
+                //        sum = term1 - term2 + term3;
+                //    }
+                //    else if (userOperator2 == '-')
+                //    {
+                //        sum = term1 - term2 - term3;
+                //    }
+                //    else if (userOperator2 == '*')
+                //    {
+                //        sum = term1 - (term2 * term3);
+                //    }
+                //    else if (userOperator2 == '/')
+                //    {
+                //        sum = term1 - (term2 / term3);
+                //    }
+                //}
+                //else if (userOperator1 == '*')
+                //{
+                //    if (userOperator2 == '+')
+                //    {
+                //        sum = (term1 * term2) + term3;
+                //    }
+                //    else if (userOperator2 == '-')
+                //    {
+                //        sum = (term1 * term2) - term3;
+                //    }
+                //    else if (userOperator2 == '*')
+                //    {
+                //        sum = term1 * term2 * term3;
+                //    }
+                //    else if (userOperator2 == '/')
+                //    {
+                //        sum = term1 * term2 / term3;
+                //    }
+                //}
+                //else if (userOperator1 == '/')
+                //{
+                //    if (userOperator2 == '+')
+                //    {
+                //        sum = (term1 / term2) + term3;
+                //    }
+                //    else if (userOperator2 == '-')
+                //    {
+                //        sum = (term1 / term2) - term3;
+                //    }
+                //    else if (userOperator2 == '*')
+                //    {
+                //        sum = term1 / term2 * term3;
+                //    }
+                //    else if (userOperator2 == '/')
+                //    {
+                //        sum = term1 / term2 / term3;
+                //    }
+                //}
+
                 //Skriv ut resultatet och lägga resultatet i en lista
                 Console.WriteLine($"{term1} {userOperator1} {term2} {userOperator2} {term3} = {sum}");
                 resultList.Add(sum);
